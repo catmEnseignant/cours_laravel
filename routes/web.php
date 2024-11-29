@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\WelcomeController;
 use \App\Http\Controllers\EtudiantController;
@@ -15,9 +16,11 @@ use \App\Http\Controllers\EtudiantController;
 |
 */
 
-Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+Auth::routes();
 
-Route::get('etudiants', [EtudiantController::class,'index'])->name('etudiants.index');
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome')->middleware('auth');
+
+Route::get('etudiants', [EtudiantController::class,'index'])->name('etudiants.index')->middleware('auth');
 Route::get('etudiants/create', [EtudiantController::class,'create'])->name('etudiants.create');
 Route::post('etudiants/store', [EtudiantController::class,'store'])->name('etudiants.store');
 Route::get('etudiants/edit/{id}', [EtudiantController::class,'edit'])->name('etudiants.edit');
