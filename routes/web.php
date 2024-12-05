@@ -18,12 +18,12 @@ use \App\Http\Controllers\EtudiantController;
 
 Auth::routes();
 
-Route::get('/', [WelcomeController::class, 'index'])->name('welcome')->middleware('auth');
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
-Route::get('etudiants', [EtudiantController::class,'index'])->name('etudiants.index')->middleware('auth');
-Route::get('etudiants/create', [EtudiantController::class,'create'])->name('etudiants.create');
-Route::post('etudiants/store', [EtudiantController::class,'store'])->name('etudiants.store');
-Route::get('etudiants/edit/{id}', [EtudiantController::class,'edit'])->name('etudiants.edit');
-Route::post('etudiants/update/{id}', [EtudiantController::class,'update'])->name('etudiants.update');
-Route::get('etudiants/destroy/{id}', [EtudiantController::class,'destroy'])->name('etudiants.destroy');
+// Route::get('etudiants', [EtudiantController::class,'index'])->name('etudiants.index')->middleware('auth');
+// Route::get('etudiants/create', [EtudiantController::class,'create'])->name('etudiants.create');
+// Route::post('etudiants/store', [EtudiantController::class,'store'])->name('etudiants.store');
+// Route::get('etudiants/edit/{id}', [EtudiantController::class,'edit'])->name('etudiants.edit');
+// Route::post('etudiants/update/{id}', [EtudiantController::class,'update'])->name('etudiants.update');
+// Route::get('etudiants/destroy/{id}', [EtudiantController::class,'destroy'])->name('etudiants.destroy');
 
